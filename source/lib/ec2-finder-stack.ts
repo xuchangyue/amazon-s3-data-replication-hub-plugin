@@ -223,7 +223,7 @@ export class Ec2FinderStack extends Construct {
             `sed -i  -e "s/##log group##/${finderLG.logGroupName}/g" cw_agent_config.json`,
             '/opt/aws/amazon-cloudwatch-agent/bin/amazon-cloudwatch-agent-ctl -a fetch-config -m ec2 -c file:/home/ec2-user/cw_agent_config.json -s',
 
-            // Get CLI from solution assets
+            // Get CLI, desclient is Aliyun_OSS
             `curl -LO "https://github.com/xuchangyue/data-transfer-hub-cli/releases/download/v1.2.2/dthcli.tar.gz"`,
             `tar zxvf dthcli.tar.gz`,
 
