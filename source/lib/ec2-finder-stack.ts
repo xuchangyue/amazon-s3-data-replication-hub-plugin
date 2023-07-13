@@ -224,8 +224,8 @@ export class Ec2FinderStack extends Construct {
             '/opt/aws/amazon-cloudwatch-agent/bin/amazon-cloudwatch-agent-ctl -a fetch-config -m ec2 -c file:/home/ec2-user/cw_agent_config.json -s',
 
             // Get CLI from solution assets
-            `curl -LO "${cliAssetDomain}/data-transfer-hub-cli/v${props.cliRelease}/dthcli_${props.cliRelease}_linux_arm64.tar.gz"`,
-            `tar zxvf dthcli_${props.cliRelease}_linux_arm64.tar.gz`,
+            `curl -LO "https://github.com/xuchangyue/data-transfer-hub-cli/releases/download/v1.2.2/dthcli.tar.gz"`,
+            `tar zxvf dthcli.tar.gz`,
 
             // Prepare the environment variables
             `echo "export JOB_TABLE_NAME=${props.env.JOB_TABLE_NAME}" >> env.sh`,
