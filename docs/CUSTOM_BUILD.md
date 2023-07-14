@@ -13,8 +13,9 @@ To make changes to the solution, download or clone this repo, update the source 
 Run unit tests to make sure added customization passes the tests:
 
 ```bash
-chmod +x ./source/run-all-tests.sh
-./source/run-all-tests.sh
+cd source
+chmod +x ./run-all-tests.sh
+./run-all-tests.sh
 ```
 
 ## 3. Declare environment variables
@@ -36,8 +37,9 @@ aws s3 mb s3://$DIST_OUTPUT_BUCKET-$REGION --region $REGION
 ## 5. Create the deployment packages
 Build the distributable:
 ```bash
-chmod +x ./deployment/build-s3-dist.sh
-./deployment/build-s3-dist.sh $DIST_OUTPUT_BUCKET $SOLUTION_NAME $VERSION $REGION
+cd ../deployment
+chmod +x ./build-s3-dist.sh
+./build-s3-dist.sh $DIST_OUTPUT_BUCKET $SOLUTION_NAME $VERSION $REGION
 ```
 
 ## 6. Deploy the distributable
